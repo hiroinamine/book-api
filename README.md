@@ -11,14 +11,29 @@ CRUD de livros utilizando Spring Framework.
 - [Mongo](https://docs.mongodb.com)
 
 
+## Executando aplicação com Docker
+```
+$ git clone git@github.com:hiroinamine/book-api.git
+$ cd book-api
+$ docker-compose build
+$ docker-compose up
+```
+
 ## Documentação da API
 
 #### Consulta de livros
 
-* **URL** *
+- **URL**
     `GET /api/books`
 
-* **Retorno** *
+- **Parâmetros via query**
+  | Atributo | Tipo do dado | Descrição                                | Obrigatório | Valor padrão | Exemplo     |
+  | -------- | ------------ | ---------------------------------------- | ----------- | ------------ | ----------- |
+  | size     | numérico     | Quantidade de registros por página       | não         | 5            | 10          |
+  | page     | numérico     | Índice da página                         | não         | 0            | 2           |
+  | sortBy   | texto        | Ordena consulta pelo campo               | não         | null         | year        |
+
+- **Retorno**
 ```json
 {
     "content": [
@@ -76,10 +91,10 @@ CRUD de livros utilizando Spring Framework.
 
 #### Insere um novo livro
 
-* **URL** *
+- **URL**
     `POST /api/books`
 
-* **Corpo** *
+- **Corpo**
 ```json
 {
     "name": "O pequeno principe",
@@ -89,7 +104,7 @@ CRUD de livros utilizando Spring Framework.
 }
 ```
 
-* **Retorno** *
+- **Retorno**
 ```json
 {
     "id": "5e061c453ea2635dc73de561",
@@ -104,10 +119,10 @@ CRUD de livros utilizando Spring Framework.
 
 #### Consulta de um livro pelo seu identificador
 
-* **URL** *
+- **URL**
     `GET /api/books/{id}`
 
-* **Retorno** *
+- **Retorno**
 ```json
 {
     "id": "5e061c453ea2635dc73de561",
@@ -122,10 +137,10 @@ CRUD de livros utilizando Spring Framework.
 
 #### Atualiza um livro pelo seu identificador
 
-* **URL** *
+- **URL**
     `PUT /api/books/{id}`
 
-* **Corpo** *
+- **Corpo**
 ```json
 {
     "name": "O pequeno príncipe",
@@ -135,7 +150,7 @@ CRUD de livros utilizando Spring Framework.
 }
 ```
 
-* **Retorno** *
+- **Retorno**
 ```json
 {
     "id": "5e061c453ea2635dc73de561",
@@ -150,5 +165,5 @@ CRUD de livros utilizando Spring Framework.
 
 #### Remove um livro pelo seu identificador
 
-* **URL** *
+- **URL**
     `DELETE /api/books/{id}`
