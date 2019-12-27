@@ -6,20 +6,19 @@ services:
     ports:
       - "27017:27017"
 
-#  my-api:
-#    build: .
-#    environment:
-#      - SPRING_DATA_MONGODB_URI=mongodb://my-db:27017/spaceship
-#    ports:
-#      - "8080:8080"
-#    volumes:
-#      - ./:/app
-#      - ~/.m2:/root/.m2
-#    command: >
-#      bash -c "
-#        mvn clean package;
-#        java -jar target/springboot-rest-repositories-*.jar;
-#      "
-#    depends_on:
-#      - my-db
-
+  my-api:
+    build: .
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://my-db:27017/bookstore
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+      - ~/.m2:/root/.m2
+    command: >
+      bash -c "
+        mvn clean package;
+        java -jar target/book-api-*.jar;
+      "
+    depends_on:
+      - my-db
