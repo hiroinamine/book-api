@@ -27,6 +27,7 @@ $ docker-compose up
     `GET /api/books`
 
 - **Parâmetros via query**
+
   | Atributo | Tipo do dado | Descrição                                | Obrigatório | Valor padrão | Exemplo     |
   | -------- | ------------ | ---------------------------------------- | ----------- | ------------ | ----------- |
   | size     | numérico     | Quantidade de registros por página       | não         | 5            | 10          |
