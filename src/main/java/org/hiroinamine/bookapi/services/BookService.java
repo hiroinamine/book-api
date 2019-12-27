@@ -45,4 +45,8 @@ public class BookService {
         bookToUpdate.setId(id);
         return repo.save(bookToUpdate);
     }
+
+    public void deleteAll() {
+        repo.deleteAll();
+    }
 }
