@@ -18,7 +18,7 @@ $ cd book-api
 $ docker-compose build
 $ docker-compose up
 ```
-A API estará disponível no endereço `http://localhost:8080/api/`.
+A API estará disponível no endereço `http://localhost:8080/`.
 
 ## Documentação da API
 

@@ -11,7 +11,7 @@ import java.util.Map;
 public class HomeController {
 
     @ResponseBody
-    @RequestMapping("/api/")
+    @RequestMapping("/")
     public Map<String, String> status() {
         Map<String, String> map = new HashMap<>();
         map.put("status", "ok");
